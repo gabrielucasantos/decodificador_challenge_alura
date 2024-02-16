@@ -1,0 +1,281 @@
+/*
+  1. Use um modelo de dimensionamento de caixa mais intuitivo.
+*/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/*
+    Ajustes tipográficos!
+    3. Adicione altura de linha acessível
+    4. Melhore a renderização do texto
+  */
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+/*
+    5. Melhore os padrões de mídia
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+/*
+   6. Remova estilos de tipografia de formulário integrados
+  */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/*
+    7. Evite estouros de texto
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+/*
+   8. Crie um contexto de empilhamento raiz
+  */
+#root,
+#__next {
+	isolation: isolate;
+}
+
+/* Estilo da área de trabalho */
+
+:root {
+	/* Dark Green */
+
+	--dark-green-100: #94D82D ;
+	--dark-green-200: #78b521;
+	--dark-green-300: #5ca41a;
+	--dark-green-400: #468e13;
+	--dark-green-500: #2f7007;
+
+	/* Light Green */
+
+	--light-green-100: #f3f5fc;
+	--light-green-200: #e6e8f9;
+	--light-green-300: #d9dbf2;
+	--light-green-400: #c2c4e6;
+	--light-green-500: #b5b7df;
+}
+
+body {
+	font-family: "Inter", sans-serif;
+	background-color: var(--light-green-100);
+}
+
+.container {
+	display: grid;
+	margin: 50px;
+	grid-template:
+		"header header result"
+		". main result"
+		"footer footer footer";
+	grid-template-columns: 100px 1fr 400px;
+	grid-template-rows: 50px minmax(500px, 85vh) 20px;
+	gap: 10px;
+}
+
+.container-nav {
+	grid-area: header;
+	align-self: center;
+}
+
+.container-box {
+	grid-area: main;
+	grid-row: 1 / 3;
+	align-self: center;
+	justify-self: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.container-text textarea {
+	width: 100%;
+	padding: 10px;
+	border: none;
+	background-color: var(--light-green-100);
+	color: var(--dark-green-300);
+	font-size: 32px;
+	resize: none;
+	outline: none;
+}
+
+.container-text textarea::placeholder {
+	color: var(--dark-green-300);
+	font-size: 32px;
+}
+
+.container-btn-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 10px;
+}
+
+.container-btn-box p {
+	display: flex;
+	gap: 10px;
+	color: #495057;
+	font-size: 12px;
+}
+
+.container-btn {
+	display: flex;
+	gap: 10px;
+	align-self: center;
+}
+
+.btn {
+	background-color: var(--dark-green-300);
+	width: 328px;
+	height: 67px;
+	border: none;
+	border-radius: 27px;
+	cursor: pointer;
+	color: white;
+}
+
+.btn-descriptografar {
+	border: var(--dark-green-300) 1px solid;
+	color: var(--dark-green-300);
+	background-color: #d8dfe8;
+}
+
+.container-right {
+	grid-area: result;
+	grid-row: 1 / 3;
+	justify-self: center;
+	background-color: white;
+	border-radius: 32px;
+	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.container-result {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10;
+}
+
+.result-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	color: #495057;
+}
+
+.result {
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	height: 770px;
+}
+
+.result-text {
+	color: #495057;
+	font-size: 24px;
+	text-align: left;
+}
+
+.btn-copy {
+	border: var(--dark-green-300) 1px solid;
+	color: var(--dark-green-300);
+	background-color: #d8dfe8;
+}
+
+footer {
+	grid-area: footer;
+	text-align: center;
+}
+
+.rodape {
+	text-decoration: none;
+	color: #94D82D;
+}
+
+/* Estilo móvel */
+
+@media (max-width: 950px) {
+	.container {
+		margin: 30px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.container-nav {
+		align-self: self-start;
+		justify-self: center;
+	}
+
+	.container-box {
+		margin-top: 50px;
+		align-self: center;
+		justify-self: center;
+	}
+	.container-right {
+		display: flex;
+		flex-direction: column;
+		min-height: 200px;
+		justify-self: center;
+		margin-top: 30px;
+	}
+	.container-btn-box {
+		align-items: center;
+	}
+	.container-btn {
+		align-self: center;
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	.result {
+		flex-grow: 1;
+		height: 350px;
+		text-align: center;
+		justify-content: space-between;
+	}
+
+	.result-img {
+		display: none;
+	}
+}
+
