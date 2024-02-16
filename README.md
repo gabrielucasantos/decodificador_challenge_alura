@@ -1,4 +1,4 @@
-# PROJETO CODIFICADOR 👾
+# PROJETO CODIFICADOR (👾)
 <br>
 
 **Descrição:** esse projeto faz parte do desafio do [Challenge ONE - Iniciante em Programação da Alura](https://www.alura.com.br/challenges/challenge-one-logica). A proposta é criar um simples código que codifique e decodifique uma mensagem.
