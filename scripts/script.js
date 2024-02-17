@@ -6,6 +6,8 @@ const resultBox = document.querySelector(".result-box");
 const resultWindow = document.querySelector(".result");
 const resultText = document.querySelector(".result-text");
 const warning = document.querySelector(".warning");
+const btnLimpar = document.querySelector(".btn-limpar");
+const campoTexto = document.querySelector("#text-input");
 
 const CHAVE_CRIPTOGRAFIA = [
 	["e", "enter"],
@@ -66,3 +68,7 @@ function descriptografarTexto(texto) {
 	});
 	return textoDescriptografado;
 }
+
+btnLimpar.addEventListener("click", function() {
+    campoTexto.value = ""; // Define o valor do campo de texto como vazio
+});
